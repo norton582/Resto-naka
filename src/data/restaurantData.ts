@@ -1,0 +1,263 @@
+import { MenuItem, Review, SeatingArea } from '../types/restaurant';
+
+export const RESTAURANT_IMAGES = {
+  logo: '/src/assets/images/logo_gourmande_nakay_1790875926933.jpg',
+  heroSalmon: '/src/assets/images/hero_salmon_dish_1790875942346.jpg',
+  dishSkewers: '/src/assets/images/dish_skewers_1790875955157.jpg',
+  dishMeatballs: '/src/assets/images/dish_meatballs_1790875967342.jpg',
+  dishSalad: '/src/assets/images/dish_salad_1790875978806.jpg',
+  ambiance: '/src/assets/images/ambiance_room_1790875996699.jpg',
+};
+
+export const RESTAURANT_INFO = {
+  name: 'Gourmande Nakay',
+  tagline: 'Haute Gastronomie & Saveurs Inspirées',
+  subtitle: 'Une rencontre envoûtante entre la précision de la gastronomie française et la richesse des arômes Nakay.',
+  phone: '+33 1 42 68 55 00',
+  email: 'contact@gourmande-nakay.com',
+  address: '28 Rue de la Paix, 75002 Paris',
+  metro: 'Opéra / Madeleine (Lignes 3, 7, 8, 12)',
+  hours: [
+    { days: 'Mardi au Vendredi', lunch: '12h00 - 14h30', dinner: '19h00 - 23h00' },
+    { days: 'Samedi & Dimanche', lunch: '12h00 - 15h00', dinner: '19h00 - 23h30' },
+    { days: 'Lundi', lunch: 'Fermé', dinner: 'Fermé (Privatisations sur demande)' },
+  ],
+};
+
+export const SPECIALTIES: MenuItem[] = [
+  {
+    id: 'spec-1',
+    badgeNumber: 1,
+    name: 'Brochettes Yakitori Teriyaki Fumées',
+    category: 'signatures',
+    categoryLabel: 'Signature du Chef',
+    description: 'Suprêmes de volaille fermière marinés au gingembre confit, laqués d’un jus réduit Nakay et parsemés de sésame grillé.',
+    price: 24,
+    image: RESTAURANT_IMAGES.dishSkewers,
+    tags: ['signature', 'coup-de-coeur'],
+    pairing: 'Pinot Noir Domaine Trapet 2021',
+  },
+  {
+    id: 'spec-2',
+    badgeNumber: 2,
+    name: 'Bouchées Dorées Crousti-Fondantes',
+    category: 'signatures',
+    categoryLabel: 'Création Maison',
+    description: 'Bouchées croustillantes farcies d’effiloché de bœuf confit 14 heures aux épices douces, cœur coulant et émulsion poivre de Sichuan.',
+    price: 26,
+    image: RESTAURANT_IMAGES.dishMeatballs,
+    tags: ['signature'],
+    pairing: 'Saint-Émilion Grand Cru Château Bellefont 2019',
+  },
+  {
+    id: 'spec-3',
+    badgeNumber: 3,
+    name: 'Salade Jardin d’Éden & Tomates Anciennes',
+    category: 'entrees',
+    categoryLabel: 'Entrée Fraîcheur',
+    description: 'Tomates d’antan gorgées de soleil, jeunes pousses amères, cœur de burrata crémeuse des Pouilles et perles de vinaigre balsamique.',
+    price: 21,
+    image: RESTAURANT_IMAGES.dishSalad,
+    tags: ['vegetarien', 'sans-gluten'],
+    pairing: 'Sancerre Blanc Domaine Vacheron 2022',
+  },
+];
+
+export const FULL_MENU: MenuItem[] = [
+  // Entrées
+  {
+    id: 'ent-1',
+    name: 'Carpaccio de Saint-Jacques & Yuzu',
+    category: 'entrees',
+    categoryLabel: 'Entrées',
+    description: 'Noix de Saint-Jacques de plongée, huile infusée aux herbes sauvages, gelée de yuzu et fleur de sel de Guérande.',
+    price: 23,
+    tags: ['sans-gluten', 'coup-de-coeur'],
+    pairing: 'Chablis Premier Cru 2022',
+  },
+  {
+    id: 'ent-2',
+    name: 'Velouté de Butternut Rôti & Émulsion Truffée',
+    category: 'entrees',
+    categoryLabel: 'Entrées',
+    description: 'Courge butternut rôtie au feu de bois, graines de courge caramélisées et espuma délicat à la truffe noire Melanosporum.',
+    price: 18,
+    tags: ['vegetarien', 'sans-gluten'],
+  },
+  {
+    id: 'ent-3',
+    name: 'Tataki de Bœuf Wagyu Mariné',
+    category: 'entrees',
+    categoryLabel: 'Entrées',
+    description: 'Tranches fondantes saisies au chalumeau, ponzu maison, ciboulette ciselée et chips d’ail noir.',
+    price: 25,
+    tags: ['signature'],
+    pairing: 'Syrah Crozes-Hermitage 2021',
+  },
+  {
+    id: 'ent-4',
+    name: 'Gyoza Nakay Vapeur au Canard Confit',
+    category: 'entrees',
+    categoryLabel: 'Entrées',
+    description: 'Pâte translucide artisanale, farce généreuse de canard fondant, bouillon corsé au dashi et cinq-épices.',
+    price: 20,
+    tags: ['coup-de-coeur'],
+  },
+
+  // Plats Signatures & Poissons
+  {
+    id: 'plat-1',
+    name: 'Pavé de Saumon Laqué au Miel d’Acacia & Épices Douces',
+    category: 'signatures',
+    categoryLabel: 'Plats d’Exception',
+    description: 'Saumon Label Rouge cuit à basse température, peau croustillante caramélisée, réduction soja-miel, purée de panais soyeuse et herbes fraîches.',
+    price: 34,
+    image: RESTAURANT_IMAGES.heroSalmon,
+    tags: ['signature', 'coup-de-coeur'],
+    pairing: 'Meursault Domaine des Comtes Lafon 2020',
+  },
+  {
+    id: 'plat-2',
+    name: 'Filet de Bœuf Rossini Façon Nakay',
+    category: 'plats',
+    categoryLabel: 'Viandes Nobles',
+    description: 'Cœur de filet charolais rôti au sautoir, escalope de foie gras poêlée, mousseline de pommes de terre truffée et jus corsé au porto.',
+    price: 42,
+    tags: ['signature'],
+    pairing: 'Pauillac Château Pichon Baron 2017',
+  },
+  {
+    id: 'plat-3',
+    name: 'Dos de Cabillaud en Croûte d’Herbes Nakay',
+    category: 'plats',
+    categoryLabel: 'Pêche Durable',
+    description: 'Cabillaud de ligne nacré, chapelure dorée aux herbes aromatiques et zeste de combawa, tombée de fenouil braisé au safran.',
+    price: 32,
+    tags: ['sans-gluten'],
+    pairing: 'Condrieu Domaine Georges Vernay 2021',
+  },
+  {
+    id: 'plat-4',
+    name: 'Risotto Carnaroli aux Morilles & Asperges Vertes',
+    category: 'plats',
+    categoryLabel: 'Plat Végétal',
+    description: 'Riz crémeux lié au parmesan 36 mois, morilles étuvées au beurre noisette, asperges croquantes et tuile croustillante.',
+    price: 28,
+    tags: ['vegetarien', 'sans-gluten'],
+    pairing: 'Chassagne-Montrachet 2020',
+  },
+  {
+    id: 'plat-5',
+    name: 'Poitrine de Porc Ibérique Croustillante',
+    category: 'plats',
+    categoryLabel: 'Viandes Nobles',
+    description: 'Cuisson lente 24 heures sous vide, peau laquée brillante, écrasé de patates douces au piment d’Espelette et pickles d’oignons pourpres.',
+    price: 31,
+    tags: ['coup-de-coeur'],
+  },
+
+  // Desserts
+  {
+    id: 'des-1',
+    name: 'Sphère Chocolat Grand Cru & Cœur Caramel Coulant',
+    category: 'desserts',
+    categoryLabel: 'Desserts',
+    description: 'Coque fine de chocolat noir Valrhona 72%, ganache onctueuse, coulis chaud au caramel beurre salé versé à table.',
+    price: 16,
+    tags: ['signature', 'coup-de-coeur'],
+  },
+  {
+    id: 'des-2',
+    name: 'Millefeuille Vanille Bourbon de Madagascar',
+    category: 'desserts',
+    categoryLabel: 'Desserts',
+    description: 'Feuilletage caramélisé inversé ultra croustillant, crème légère aux grains de vanille pure et noisettes du Piémont torréfiées.',
+    price: 15,
+  },
+  {
+    id: 'des-3',
+    name: 'Pavlova Déstructurée aux Fruits Rouges & Basilic',
+    category: 'desserts',
+    categoryLabel: 'Desserts',
+    description: 'Meringue vaporeuse, chantilly montée au mascarpone et yuzu, fruits rouges frais de nos vergers et sorbet framboise-basilic.',
+    price: 14,
+    tags: ['sans-gluten', 'vegetarien'],
+  },
+
+  // Boissons & Cocktails
+  {
+    id: 'boi-1',
+    name: 'Cocktail Signature "Le Nakay Doré"',
+    category: 'boissons',
+    categoryLabel: 'Cave & Créations',
+    description: 'Gin artisanal français infusé au thé noir fumé, cordial de kumquat, liqueur de sureau, champagne brut et feuille d’or 24 carats.',
+    price: 18,
+    tags: ['signature'],
+  },
+  {
+    id: 'boi-2',
+    name: 'Mocktail "Jardin Botanique"',
+    category: 'boissons',
+    categoryLabel: 'Cave & Créations',
+    description: 'Distillat sans alcool Seedlip, purée de litchi, verjus artisanal de Bourgogne et infusion d’hibiscus bio.',
+    price: 12,
+    tags: ['vegetarien'],
+  },
+];
+
+export const SEATING_AREAS: { id: SeatingArea; label: string; desc: string; icon: string }[] = [
+  {
+    id: 'salle_principale',
+    label: 'Salle Principale',
+    desc: 'Lumières tamisées chaleureuses, boiseries nobles et ambiance feutrée.',
+    icon: 'Sparkles',
+  },
+  {
+    id: 'terrasse',
+    label: 'Terrasse Chauffée & Végétalisée',
+    desc: 'Vue sur la cour intérieure fleurie, couverte et chauffée toute l’année.',
+    icon: 'Sun',
+  },
+  {
+    id: 'lounge_nakay',
+    label: 'Espace Lounge Nakay',
+    desc: 'Banquettes en velours confortables, idéal pour dîner intime ou apéritif.',
+    icon: 'Heart',
+  },
+  {
+    id: 'table_chef',
+    label: 'Table Privilège du Chef',
+    desc: 'Expérience immersive face aux cuisines ouvertes et dégustation sur mesure.',
+    icon: 'Flame',
+  },
+];
+
+export const REVIEWS: Review[] = [
+  {
+    id: 'rev-1',
+    author: 'Jean-Christophe L.',
+    role: 'Critique Gastronomique',
+    rating: 5,
+    date: 'Septembre 2026',
+    comment: 'Une révélation absolue à Paris. Le saumon laqué et les bouchées croustillantes démontrent une maîtrise technique remarquable et un équilibre d’épices d’une rare élégance.',
+    source: 'Guide Épicurien',
+  },
+  {
+    id: 'rev-2',
+    author: 'Élodie & Thomas M.',
+    role: 'Réservation vérifiée',
+    rating: 5,
+    date: 'Août 2026',
+    comment: 'Nous avons célébré notre anniversaire de mariage à la Table du Chef de Gourmande Nakay. Le service était attentif sans être oppressant, et les accords mets-vins sont sublimes.',
+    source: 'TableCheck',
+  },
+  {
+    id: 'rev-3',
+    author: 'Aurélien De La Tour',
+    role: 'Client régulier',
+    rating: 5,
+    date: 'Juillet 2026',
+    comment: 'Cadre feutré d’une grande distinction. Les saveurs vous transportent dès la première bouchée. Le système de réservation en ligne est d’une fluidité exemplaire.',
+    source: 'Google Reviews',
+  },
+];
